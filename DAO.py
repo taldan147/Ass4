@@ -18,7 +18,7 @@ class DAO:
 
         stmt = 'INSERT INTO {} ({}) VALUES ({})'.format(self._table_name, column_names, qmarks)
         # stmt = 'INSERT INTO {} ({}) VALUES ({})'.format(self._table_name, column_names, qmarks)
-
+        params=list(params)
         self._conn.execute(stmt, params)
 
     def find_all(self):

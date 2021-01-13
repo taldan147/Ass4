@@ -11,21 +11,21 @@ class Vaccine:
 
 class Supplier:
     def __init__(self,id,name,logistic):
-        self.id = id
+        self.id = int(id)
         self.name = name
-        self.logistic = logistic
+        self.logistic = int(logistic)
 
 class Clinic:
     def __init__(self, id, location, demand, logistic):
-        self.id = id
+        self.id = int(id)
         self.location = location
-        self.demand = demand
-        self.logistic = logistic
+        self.demand = int(demand)
+        self.logistic = int(logistic)
 
 
 class Logistic:
     def __init__(self, id, name, count_sent, count_recieve):
-        self.id = id
+        self.id = int(id)
         self.name = name
-        self.count_sent = count_sent
-        self.count_recieve = count_recieve
+        self.count_sent = int(count_sent)
+        self.count_recieve = int(count_recieve)
