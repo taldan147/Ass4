@@ -4,8 +4,10 @@ from datetime import datetime
 class Vaccine:
     def __init__(self,id,date,supplier,quantity):
         self.id = int(id)
-        self.date = datetime.strptime('2021-01-11', '%Y-%m-%d')
-        self.date = datetime.date(self.date)
+        # date = date.split('−')
+        # self.date = datetime(int(date[0]),int(date[1]),int(date[2]))
+        # self.date = datetime.date(self.date)
+        self.date = date
         self.supplier = int(supplier)
         self.quantity = int(quantity)
 
@@ -24,8 +26,8 @@ class Clinic:
 
 
 class Logistic:
-    def __init__(self, id, name, count_sent, count_recieve):
+    def __init__(self, id, name, count_sent, count_received):
         self.id = int(id)
         self.name = name
         self.count_sent = int(count_sent)
-        self.count_recieve = int(count_recieve)
+        self.count_received = int(count_received)

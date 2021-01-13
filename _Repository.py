@@ -1,19 +1,21 @@
 import atexit
 import sqlite3
 
+import DTO
 from _Clinics import _Clinics
 from _Logistics import _Logistics
 from _Suppliers import _Suppliers
 from _Vaccines import _Vaccines
+from DAO import DAO
 
 
 class _Repository:
     def __init__(self):
         self._conn = sqlite3.connect('database.db')
-        self.vaccines = _Vaccines(self._conn)
-        self.suppliers = _Suppliers(self._conn)
-        self.clinics = _Clinics(self._conn)
-        self.logistics = _Logistics(self._conn)
+        self.vaccines = DAO(DTO.Vaccine,self._conn, 1)
+        self.suppliers = DAO(DTO.Supplier, self._conn,1)
+        self.clinics = DAO(DTO.Clinic,self._conn,1)
+        self.logistics = DAO(DTO.Logistic,self._conn,1)
 
     def _close(self):
         self._conn.commit()
@@ -47,7 +49,7 @@ class _Repository:
             id               INT         PRIMARY KEY,
             name             STRING      NOT NULL,
             count_sent       INT         NOT NULL,
-            count_recieve    INT         NOT NULL
+            count_received    INT         NOT NULL
         );
     """)
 
