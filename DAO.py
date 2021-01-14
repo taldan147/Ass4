@@ -1,4 +1,5 @@
 import DBHandler as handler
+import DTO
 
 
 class DAO:
@@ -12,7 +13,7 @@ class DAO:
 
     def insert(self, dto_instance):
         ins_dict = vars(dto_instance)
-        if ins_dict['id'] == 0:
+        if isinstance(dto_instance,DTO.Vaccine):
             ins_dict['id'] = self.lastId
 
         column_names = ','.join(ins_dict.keys())
