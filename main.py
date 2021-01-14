@@ -113,7 +113,7 @@ def read_file(path):
 
 
 def str_to_date(str):
-    date = str.split('−')
+    date = str.split("-")
     date = datetime(int(date[0]), int(date[1]), int(date[2]))
     return datetime.date(date)
 
