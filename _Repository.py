@@ -2,10 +2,6 @@ import atexit
 import sqlite3
 
 import DTO
-from _Clinics import _Clinics
-from _Logistics import _Logistics
-from _Suppliers import _Suppliers
-from _Vaccines import _Vaccines
 from DAO import DAO
 
 

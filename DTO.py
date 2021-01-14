@@ -1,12 +1,9 @@
 
-from datetime import datetime
+
 
 class Vaccine:
     def __init__(self,id,date,supplier,quantity):
         self.id = int(id)
-        # date = date.split('−')
-        # self.date = datetime(int(date[0]),int(date[1]),int(date[2]))
-        # self.date = datetime.date(self.date)
         self.date = date
         self.supplier = int(supplier)
         self.quantity = int(quantity)

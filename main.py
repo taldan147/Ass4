@@ -8,7 +8,7 @@ import DBHandler as handler
 
 
 import DTO
-from DAO import DAO
+
 
 
 dbcon = repo._conn
@@ -16,7 +16,8 @@ def main(args):
     repo.create_tables()
 
     raws = read_file(args[1])
-    print(raws)
+    str = '01'
+    print(int(str))
 
     numOfVaccines = int(raws[0][0])
     numOfSuppliers = int(raws[0][1])
@@ -115,6 +116,7 @@ def str_to_date(str):
     date = str.split('−')
     date = datetime(int(date[0]), int(date[1]), int(date[2]))
     return datetime.date(date)
+
 
 
 
